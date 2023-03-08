@@ -1,5 +1,6 @@
 package com.example.mui_userform
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -80,16 +81,31 @@ class MainActivity : AppCompatActivity(), RadioGroup.OnCheckedChangeListener,
                    Toast.makeText(this,"plese fill diffrent number",Toast.LENGTH_SHORT).show()
                }
 
-               else
-               {
+             else{
+                 val firstname = binding.firstName.editableText?.toString()
+                   val lastname= binding.lastname.editableText?.toString()
+                   val phone=binding.mobileNo.editableText?.toString()
+                   val Alphone=binding.AlNo.editableText?.toString()
+                   val email = binding.Email.editableText?.toString()
 
+                   val intent= Intent(this,secound::class.java)
+                   val listname=arrayList.toString().replace("[","").replace("]","")
 
+                   intent.putExtra("firstName",firstname)
+                   intent.putExtra("lastname",lastname)
+                   intent.putExtra("phone",phone)
+                   intent.putExtra("Alphone",Alphone)
+                   intent.putExtra("email",email)
+                   intent.putExtra("Gender",gender)
 
+                   intent.putExtra("hobbies",listname)
+                   startActivity(intent)
 
 
 
 
                }
+
            }
 
         }
