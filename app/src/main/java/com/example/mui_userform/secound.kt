@@ -14,14 +14,15 @@ class secound : AppCompatActivity() {
         setContentView(binding.root)
 
         val intent=intent
-        val firstnmae=intent.getStringExtra("firstname")
+        val firstnmae=intent.getStringExtra("firstName")
         val lastnmae=intent.getStringExtra("lastname")
         val phone=intent.getStringExtra("phone")
         val Alphone=intent.getStringExtra("Alphone")
         val email=intent.getStringExtra("email")
         val gender=intent.getStringExtra("gender")
         val hobbies=intent.getStringExtra("hobbies")
-
-        binding.textview.text="Name:- $firstnmae$lastnmae \nphone No:-$phone\nAl.mo.no:-$Alphone \nEmail:-$email \n Hobbies:-$hobbies"
+         val dob=intent.getStringExtra("dob")
+        binding.textview.text ="Name:- $firstnmae$lastnmae \nphone No:-$phone\nAl.mo.no:-$Alphone \nEmail:-$email \n Hobbies:-$hobbies \nDate of birth= $dob"
     }
 }
+

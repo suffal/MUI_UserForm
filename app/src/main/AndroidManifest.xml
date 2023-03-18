@@ -12,6 +12,9 @@
         android:theme="@style/Theme.MUI_UserForm"
         tools:targetApi="31">
         <activity
+            android:name=".fourth"
+            android:exported="false" />
+        <activity
             android:name=".secound"
             android:exported="false" />
         <activity

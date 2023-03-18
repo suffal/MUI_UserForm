@@ -9,6 +9,7 @@ import android.widget.RadioGroup
 import android.widget.TextView
 import android.widget.Toast
 import com.example.mui_userform.databinding.ActivityMainBinding
+import java.util.Calendar
 
 class MainActivity : AppCompatActivity(), RadioGroup.OnCheckedChangeListener,
     CompoundButton.OnCheckedChangeListener, View.OnClickListener {
@@ -16,15 +17,20 @@ class MainActivity : AppCompatActivity(), RadioGroup.OnCheckedChangeListener,
 
     var gender:String?=null
     var arrayList:ArrayList<String> = ArrayList()
+    //
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        //
 
 
 
+        //
         binding.rediogroup.setOnCheckedChangeListener(this)
         binding.coding.setOnCheckedChangeListener(this)
         binding.makingFriends.setOnCheckedChangeListener(this)
@@ -32,6 +38,7 @@ class MainActivity : AppCompatActivity(), RadioGroup.OnCheckedChangeListener,
 
 
         binding.submit.setOnClickListener(this)
+
 
 
 
@@ -82,11 +89,15 @@ class MainActivity : AppCompatActivity(), RadioGroup.OnCheckedChangeListener,
                }
 
              else{
+
+                 // inislize edite text
+
                  val firstname = binding.firstName.editableText?.toString()
                    val lastname= binding.lastname.editableText?.toString()
                    val phone=binding.mobileNo.editableText?.toString()
                    val Alphone=binding.AlNo.editableText?.toString()
                    val email = binding.Email.editableText?.toString()
+                     val DOB = binding.DOB.editableText?.toString()
 
                    val intent= Intent(this,secound::class.java)
                    val listname=arrayList.toString().replace("[","").replace("]","")
@@ -97,7 +108,7 @@ class MainActivity : AppCompatActivity(), RadioGroup.OnCheckedChangeListener,
                    intent.putExtra("Alphone",Alphone)
                    intent.putExtra("email",email)
                    intent.putExtra("Gender",gender)
-
+                   intent.putExtra("dob",DOB)
                    intent.putExtra("hobbies",listname)
                    startActivity(intent)
 
